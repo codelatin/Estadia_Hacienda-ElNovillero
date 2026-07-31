@@ -1,0 +1,438 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Información para su estadía | Hacienda El Novillero">
+
+<!-- Top Navigation -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white border-b border-on-tertiary-fixed-variant transition-all duration-300">
+<div class="flex justify-between items-center px-4 md:px-margin-desktop h-24 md:h-28">
+  <div class="flex items-center min-w-0">
+    <img src="/img/logo.png" alt="Hotel Hacienda El Novillero" class="h-16 md:h-40 w-auto object-contain shrink-0" />
+    </div>
+    <nav class="hidden md:flex gap-8 items-center">
+      <a class="font-label-md text-label-md text-tertiary-fixed-dim hover:text-primary-fixed transition-colors duration-300" href="#wifi">WiFi</a>
+      <a class="font-label-md text-label-md text-tertiary-fixed-dim hover:text-primary-fixed transition-colors duration-300" href="#checkin">Check-in</a>
+      <a class="font-label-md text-label-md text-tertiary-fixed-dim hover:text-primary-fixed transition-colors duration-300" href="#servicios">Servicios</a>
+      <a class="font-label-md text-label-md text-tertiary-fixed-dim hover:text-primary-fixed transition-colors duration-300" href="#normas">Normas</a>
+      <a class="font-label-md text-label-md text-tertiary-fixed-dim hover:text-primary-fixed transition-colors duration-300" href="#experiencias">Experiencias</a>
+      <a href="https://api.whatsapp.com/send/?phone=573135825920&text&type=phone_number" target="_blank" class="bg-primary px-6 py-2 rounded text-on-primary font-label-md hover:bg-primary-container transition-all">Reservar</a>
+    </nav>
+    <button id="mobile-menu-btn" class="md:hidden text-primary-fixed shrink-0 p-2 -mr-2" aria-label="Abrir menú" aria-expanded="false">
+      <span id="mobile-menu-icon" class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+  </div>
+
+  <!-- Panel de navegación móvil -->
+  <nav id="mobile-menu" class="md:hidden flex flex-col bg-white border-t border-outline-variant px-4 gap-1 overflow-hidden max-h-0 opacity-0 transition-all duration-300 ease-in-out">
+    <a class="mobile-nav-link py-3 font-label-md text-label-md text-primary hover:text-secondary border-b border-iron-ink/10" href="#wifi">WiFi</a>
+    <a class="mobile-nav-link py-3 font-label-md text-label-md text-primary hover:text-secondary border-b border-iron-ink/10" href="#checkin">Check-in</a>
+    <a class="mobile-nav-link py-3 font-label-md text-label-md text-primary hover:text-secondary border-b border-iron-ink/10" href="#servicios">Servicios</a>
+    <a class="mobile-nav-link py-3 font-label-md text-label-md text-primary hover:text-secondary border-b border-iron-ink/10" href="#normas">Normas</a>
+    <a class="mobile-nav-link py-3 font-label-md text-label-md text-primary hover:text-secondary border-b border-iron-ink/10" href="#experiencias">Experiencias</a>
+    <a href="https://api.whatsapp.com/send/?phone=573135825920&text&type=phone_number" target="_blank" class="bg-primary text-center px-6 py-3 rounded text-on-primary font-label-md my-3">Reservar</a>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="relative min-h-screen pt-20 md:pt-24 flex flex-col items-center justify-center overflow-hidden">
+  <img
+    src="/img/hero-hacienda.jpg"
+    alt="Hacienda El Novillero al atardecer"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <div class="relative z-10 text-center px-4 max-w-4xl">
+    <div class="logo-spin-wrap mx-auto mb-10">
+      <div class="logo-spin-3d w-40 h-40 md:w-56 md:h-56 mx-auto rounded-full border-2 border-primary-fixed p-2 bg-tertiary-container/30 backdrop-blur-sm">
+      <div class="w-full h-full rounded-full flex items-center justify-center border-4 border-primary  overflow-hidden">
+  <img src="/img/logo.png" alt="Hacienda El Novillero" class="w-full h-full object-contain p-1" />
+</div>
+      </div>
+    </div>
+    <a class="inline-flex items-center gap-3 bg-primary-container hover:bg-primary px-8 py-4 rounded-xl text-on-primary-container font-headline-sm transition-all shadow-xl hover:-translate-y-1" href="https://api.whatsapp.com/send/?phone=573135825920&text&type=phone_number" target="_blank">
+      <span class="material-symbols-outlined">chat</span>
+      Atención vía WhatsApp
+    </a>
+  </div>
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce z-10">
+    <img src="/img/logo.png" alt="Desplázate para ver más" class="w-9 h-9 rounded-full bg-primary-fixed/90 p-1 object-contain shadow-md" />
+  </div>
+</section>
+
+<main class="max-w-[1280px] mx-auto px-4 md:px-margin-desktop py-12 md:py-20 space-y-20 md:space-y-32">
+
+  <!-- WiFi -->
+  <section class="reveal scroll-mt-24" id="wifi">
+    <div class="max-w-3xl mx-auto ivory-surface p-8 md:p-12 wood-border rounded-xl shadow-lg relative overflow-hidden">
+      <div class="tile-pattern absolute inset-0 pointer-events-none"></div>
+      <div class="relative z-10">
+        <div class="flex items-center gap-4 mb-8">
+          <span class="material-symbols-outlined text-primary text-4xl">wifi</span>
+          <h3 class="font-headline-md text-headline-md text-iron-ink">Conexión Digital</h3>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="space-y-4">
+            <label class="block font-label-sm text-label-sm uppercase tracking-widest text-outline">Red WiFi</label>
+            <div class="bg-white/50 adobe-depth p-4 border-b border-iron-ink flex justify-between items-center">
+              <span class="font-label-md text-label-md font-bold tracking-wider">HACIEND@ / HACIEND@_5G</span>
+              <button data-copy="HACIEND@" class="copy-btn text-primary hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined">content_copy</span>
+              </button>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <label class="block font-label-sm text-label-sm uppercase tracking-widest text-outline">Contraseña</label>
+            <div class="bg-white/50 adobe-depth p-4 border-b border-iron-ink flex justify-between items-center">
+              <span class="font-label-md text-label-md font-bold tracking-wider">#95581590+</span>
+              <button data-copy="#95581590+" class="copy-btn text-primary hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined">content_copy</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="w-full max-w-sm mx-auto h-px bg-gradient-to-r from-transparent via-outline-variant to-transparent"></div>
+
+  <!-- Check-in / Check-out -->
+  <section class="reveal scroll-mt-24" id="checkin">
+  <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div class="relative group">
+      <div class="absolute -inset-4 border border-primary/20 rotate-1 group-hover:rotate-0 transition-transform"></div>
+      <div class="relative w-full aspect-[4/5] rounded-sm shadow-xl overflow-hidden">
+        <img
+          src="/img/habitacion.jpg"
+          alt="Habitación Hotel Hacienda El Novillero"
+          class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-iron-ink/60 via-transparent to-transparent"></div>
+        <div class="absolute bottom-5 left-5 text-primary-fixed">
+          <p class="font-label-sm text-label-sm uppercase tracking-widest opacity-90">Hacienda El Novillero</p>
+          <p class="font-headline-sm text-headline-sm">Nuestras habitaciones</p>
+        </div>
+      </div>
+    </div>
+    <div class="space-y-8">
+      <h3 class="font-display-lg-mobile text-display-lg-mobile text-iron-ink">Horarios de Estadía</h3>
+      <div class="space-y-6">
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-secondary text-3xl">login</span>
+          <div>
+            <h4 class="font-headline-sm text-headline-sm text-on-surface">Check-in</h4>
+            <p class="font-body-md text-body-md text-on-surface-variant">A partir de las 3:00 p.m., hora en que se hace entrega de su habitación.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-secondary text-3xl">logout</span>
+          <div>
+            <h4 class="font-headline-sm text-headline-sm text-on-surface">Check-out</h4>
+            <p class="font-body-md text-body-md text-on-surface-variant">Hasta las 12:00 m. Entregas posteriores sin previo aviso generan un cargo de $100.000 COP por hora adicional.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 bg-secondary-container/10 border-l-4 border-secondary rounded-r-lg">
+        <p class="font-label-md text-label-md text-on-secondary-fixed-variant italic">Si su estadía supera 2 noches, hacemos limpieza parcial diaria entre 9:00 y 11:00 a.m. con su autorización — infórmenos si no la desea.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <div class="w-full max-w-sm mx-auto h-px bg-gradient-to-r from-transparent via-outline-variant to-transparent"></div>
+
+  <!-- Servicios -->
+  <section class="reveal scroll-mt-24" id="servicios">
+    <div class="text-center mb-16">
+      <h3 class="font-display-lg-mobile text-display-lg-mobile text-iron-ink mb-4">Servicios &amp; Horarios</h3>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Nuestra hospitalidad está disponible en los siguientes horarios para asegurar su confort total.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="ivory-surface p-6 wood-border shadow-sm flex flex-col items-center text-center">
+        <span class="material-symbols-outlined text-primary text-4xl mb-4">concierge</span>
+        <h4 class="font-headline-sm text-headline-sm mb-2">Recepción</h4>
+        <p class="font-label-md text-label-md text-secondary font-bold">6:00 a.m. – 8:00 p.m.</p>
+        <p class="font-body-md text-body-md text-on-surface-variant mt-2">Si desea salir o llegar fuera de este horario, por favor infórmenos.</p>
+      </div>
+      <div class="ivory-surface p-6 wood-border shadow-sm flex flex-col items-center text-center">
+        <span class="material-symbols-outlined text-primary text-4xl mb-4">restaurant</span>
+        <h4 class="font-headline-sm text-headline-sm mb-2">Restaurante</h4>
+        <p class="font-label-md text-label-md text-secondary font-bold">7:30 a.m. – 8:00 p.m.</p>
+        <p class="font-body-md text-body-md text-on-surface-variant mt-2">Cocina tradicional con ingredientes locales.</p>
+      </div>
+      <div class="ivory-surface p-6 wood-border shadow-sm flex flex-col items-center text-center">
+        <span class="material-symbols-outlined text-primary text-4xl mb-4">coffee_maker</span>
+        <h4 class="font-headline-sm text-headline-sm mb-2">Desayuno</h4>
+        <p class="font-label-md text-label-md text-secondary font-bold">7:30 a.m. – 9:00 a.m.</p>
+        <p class="font-body-md text-body-md text-on-surface-variant mt-2">Fuera de este horario tiene costo adicional.</p>
+      </div>
+      <div class="ivory-surface p-6 wood-border shadow-sm flex flex-col items-center text-center">
+        <span class="material-symbols-outlined text-primary text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">pool</span>
+        <h4 class="font-headline-sm text-headline-sm mb-2">Piscina</h4>
+        <p class="font-label-md text-label-md text-secondary font-bold">8:00 a.m. – 8:00 p.m.</p>
+        <p class="font-body-md text-body-md text-on-surface-variant mt-2">Acceso también a zonas verdes, biblioteca, billar, ping pong y rana.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="w-full max-w-sm mx-auto h-px bg-gradient-to-r from-transparent via-outline-variant to-transparent"></div>
+
+  <!-- Normas & Experiencias -->
+  <section class="reveal scroll-mt-24" id="normas">
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+      <!-- Normas -->
+      <div class="md:col-span-1 lg:col-span-1 bg-iron-ink text-primary-fixed p-6 sm:p-8 rounded-xl shadow-2xl flex flex-col justify-between">
+        <div>
+          <h3 class="font-headline-md text-headline-md mb-8">Manual de Convivencia</h3>
+          <ul class="space-y-4 font-body-md text-sm opacity-80">
+            <li class="flex gap-3"><span class="material-symbols-outlined text-primary-fixed-dim shrink-0 text-xl">volume_off</span>No hacer ruidos que perturben a otros huéspedes</li>
+            <li class="flex gap-3"><span class="material-symbols-outlined text-primary-fixed-dim shrink-0 text-xl">smoke_free</span>No fumar en habitaciones ni espacios cerrados</li>
+            <li class="flex gap-3"><span class="material-symbols-outlined text-primary-fixed-dim shrink-0 text-xl">block</span>No consumo de sustancias psicoactivas</li>
+            <li class="flex gap-3"><span class="material-symbols-outlined text-primary-fixed-dim shrink-0 text-xl">no_luggage</span>No ingreso de armas de cualquier tipo</li>
+            <li class="flex gap-3"><span class="material-symbols-outlined text-primary-fixed-dim shrink-0 text-xl">group_off</span>Ingreso de invitados solo con autorización de administración</li>
+            <li class="flex gap-3"><span class="material-symbols-outlined text-primary-fixed-dim shrink-0 text-xl">chair</span>Cuidar la decoración y el mobiliario</li>
+            <li class="flex gap-3"><span class="material-symbols-outlined text-primary-fixed-dim shrink-0 text-xl">key</span>Pérdida de llave y llavero: cargo de $60.000 c/u</li>
+            <li class="flex gap-3"><span class="material-symbols-outlined text-primary-fixed-dim shrink-0 text-xl">water_drop</span>No manipular el calentador de agua — para regularlo abra la llave con el punto rojo y disminuya el agua gradualmente. Asista a los menores.</li>
+          </ul>
+        </div>
+        <div class="mt-12 pt-8 border-t border-primary-fixed/20">
+          <p class="font-label-sm text-label-sm italic text-primary-fixed-dim">Su comodidad es nuestra prioridad.</p>
+        </div>
+      </div>
+
+      <!-- Experiencias -->
+      <div class="md:col-span-2 lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6" id="experiencias">
+      <div class="relative overflow-hidden rounded-xl h-64 md:h-auto group">
+  <img
+    src="/img/experiencia.jpg"
+    alt="Experiencias adicionales en Hacienda El Novillero"
+    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+  />
+  <div class="absolute inset-0 bg-gradient-to-t from-iron-ink/80 via-iron-ink/10 to-transparent"></div>
+
+  <span class="absolute top-4 right-4 bg-primary-fixed/95 text-on-primary-container text-xs font-label-sm uppercase tracking-widest px-3 py-1.5 rounded-full shadow-md">
+    Con costo adicional
+  </span>
+
+  <div class="absolute bottom-6 left-6 z-20 text-primary-fixed">
+    <h4 class="font-headline-sm text-headline-sm">Experiencias adicionales</h4>
+    <p class="font-label-md opacity-90">Aviso con 3 horas de anticipación</p>
+  </div>
+</div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-primary/10 border border-primary/20 p-4 rounded-xl flex flex-col items-center text-center gap-2">
+            <span class="material-symbols-outlined text-3xl text-primary">directions_walk</span>
+            <span class="font-label-md text-xs">Cabalgata</span>
+          </div>
+          <div class="bg-primary/10 border border-primary/20 p-4 rounded-xl flex flex-col items-center text-center gap-2">
+            <span class="material-symbols-outlined text-3xl text-primary">spa</span>
+            <span class="font-label-md text-xs">Masajes</span>
+          </div>
+          <div class="bg-secondary/10 border border-secondary/20 p-4 rounded-xl flex flex-col items-center text-center gap-2">
+            <span class="material-symbols-outlined text-3xl text-secondary">sports_tennis</span>
+            <span class="font-label-md text-xs">Cancha de tenis</span>
+          </div>
+          <div class="bg-secondary/10 border border-secondary/20 p-4 rounded-xl flex flex-col items-center text-center gap-2">
+            <span class="material-symbols-outlined text-3xl text-secondary">hot_tub</span>
+            <span class="font-label-md text-xs">Jacuzzi</span>
+          </div>
+          <div class="bg-tertiary/10 border border-tertiary/20 p-4 rounded-xl flex flex-col items-center text-center gap-2">
+            <span class="material-symbols-outlined text-3xl text-tertiary-container">directions_bike</span>
+            <span class="font-label-md text-xs">Bicicleta</span>
+          </div>
+          <div class="bg-tertiary/10 border border-tertiary/20 p-4 rounded-xl flex flex-col items-center text-center gap-2">
+            <span class="material-symbols-outlined text-3xl text-tertiary-container">hiking</span>
+            <span class="font-label-md text-xs">Caminata ecológica</span>
+          </div>
+        </div>
+
+        <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="bg-primary/10 border border-primary/20 p-4 rounded-xl flex flex-col items-center text-center gap-2">
+            <span class="material-symbols-outlined text-3xl text-primary">coffee</span>
+            <span class="font-label-md text-xs">Tour de café (Hacienda Coloma)</span>
+          </div>
+          <div class="bg-secondary/10 border border-secondary/20 p-4 rounded-xl flex flex-col items-center text-center gap-2">
+            <span class="material-symbols-outlined text-3xl text-secondary">park</span>
+            <span class="font-label-md text-xs">Parque La Aguadita</span>
+          </div>
+          <div class="bg-tertiary/10 border border-tertiary/20 p-4 rounded-xl flex flex-col items-center text-center gap-2">
+            <span class="material-symbols-outlined text-3xl text-tertiary-container">wine_bar</span>
+            <span class="font-label-md text-xs">Tour del viñedo y cata de vino</span>
+          </div>
+        </div>
+
+        <!-- Niños -->
+        <div class="md:col-span-2 bg-tertiary-container/10 border border-tertiary-container p-6 sm:p-8 rounded-xl flex flex-col md:flex-row gap-6 sm:gap-8 items-center">
+          <div class="w-full md:w-1/3">
+            <h3 class="font-headline-md text-headline-md text-tertiary-container mb-4">Actividades para niños</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">Espacios pensados para los más pequeños de la familia.</p>
+          </div>
+          <div class="w-full md:w-2/3 grid grid-cols-2 gap-4">
+            <div class="bg-white/50 p-4 rounded-lg flex gap-3 items-center">
+              <span class="material-symbols-outlined text-tertiary">toys</span>
+              <span class="font-label-md">Parque infantil</span>
+            </div>
+            <div class="bg-white/50 p-4 rounded-lg flex gap-3 items-center">
+              <span class="material-symbols-outlined text-tertiary">sports_soccer</span>
+              <span class="font-label-md">Cancha de fútbol</span>
+            </div>
+            <div class="bg-white/50 p-4 rounded-lg flex gap-3 items-center">
+              <span class="material-symbols-outlined text-tertiary">golf_course</span>
+              <span class="font-label-md">Cancha de minigolf</span>
+            </div>
+            <div class="bg-white/50 p-4 rounded-lg flex gap-3 items-center">
+              <span class="material-symbols-outlined text-tertiary">extension</span>
+              <span class="font-label-md">Juegos didácticos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ubicación / Contacto -->
+  <section class="reveal scroll-mt-24" id="contacto">
+    <div class="grid md:grid-cols-2 gap-0 shadow-2xl rounded-2xl overflow-hidden">
+      <div class="bg-ivory-surface p-6 sm:p-8 md:p-12 flex flex-col justify-center">
+        <h3 class="font-display-lg-mobile text-display-lg-mobile text-iron-ink mb-8">Encuéntrenos</h3>
+        <div class="space-y-6 mb-12">
+          <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary text-3xl">location_on</span>
+            <div>
+              <h4 class="font-label-md font-bold">Dirección</h4>
+              <p class="font-body-md text-on-surface-variant">Variante Fusagasugá #252211, Cundinamarca, Colombia.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary text-3xl">phone</span>
+            <div>
+              <h4 class="font-label-md font-bold">Reservas y servicios</h4>
+              <p class="font-body-md text-on-surface-variant">+57 313 582 5920 · +57 310 695 0265</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary text-3xl">mail</span>
+            <div>
+              <h4 class="font-label-md font-bold">Quejas y reclamos</h4>
+              <p class="font-body-md text-on-surface-variant">Repórtelas primero en administración. Si no se resuelven de inmediato: comercial@haciendaelnovillero.com</p>
+            </div>
+          </div>
+        </div>
+        <a href="https://goo.gl/maps/QxCAuM6J3BdD1anU8" target="_blank" class="bg-iron-ink text-primary-fixed px-8 py-4 rounded-lg font-label-md hover:bg-on-surface transition-colors flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined">directions</span>
+          Cómo llegar con Google Maps
+        </a>
+      </div>
+      <div class="min-h-[400px] relative">
+        <iframe
+          class="absolute inset-0 w-full h-full border-0"
+          loading="lazy"
+          src="https://maps.google.com/maps?q=fusagasuga%20hacienda%20el%20novillero&t=m&z=12&output=embed&iwloc=near"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-iron-ink text-primary-fixed py-20 px-4 md:px-margin-desktop mt-32 border-t-4 border-primary-container">
+  <div class="max-w-[1280px] mx-auto flex flex-col items-center text-center gap-12">
+    <div class="space-y-4">
+      <img src="/img/logo-hacienda-el-novillero.png" alt="Hacienda El Novillero" class="h-16 mx-auto bg-primary-fixed/95 rounded-full p-2" />
+      <h2 class="font-headline-md text-headline-md text-primary-fixed">Hacienda El Novillero</h2>
+      <p class="font-body-md text-body-md opacity-70">Hotel colonial a una hora de Bogotá.</p>
+    </div>
+    <div class="flex gap-8">
+      <a class="w-12 h-12 rounded-full border border-primary-fixed/30 flex items-center justify-center hover:bg-primary-fixed hover:text-iron-ink transition-all" href="https://www.facebook.com/hotelHaciendaelNovillero/" target="_blank" aria-label="Facebook">
+        <span class="material-symbols-outlined">thumb_up</span>
+      </a>
+      <a class="w-12 h-12 rounded-full border border-primary-fixed/30 flex items-center justify-center hover:bg-primary-fixed hover:text-iron-ink transition-all" href="https://www.instagram.com/haciendaelnovillero/" target="_blank" aria-label="Instagram">
+        <span class="material-symbols-outlined">camera</span>
+      </a>
+      <a class="w-12 h-12 rounded-full border border-primary-fixed/30 flex items-center justify-center hover:bg-primary-fixed hover:text-iron-ink transition-all" href="https://api.whatsapp.com/send/?phone=573135825920&text&type=phone_number" target="_blank" aria-label="WhatsApp">
+        <span class="material-symbols-outlined">chat</span>
+      </a>
+    </div>
+    <div class="space-y-2">
+      <p class="font-label-sm text-label-sm opacity-60">RNT No. 284677</p>
+      <p class="font-label-sm text-label-sm opacity-60">© 2026 Hotel Hacienda El Novillero. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script is:inline>
+  // Menú móvil
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const menuPanel = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('mobile-menu-icon');
+  let menuOpen = false;
+
+  function openMobileMenu() {
+    menuOpen = true;
+    menuPanel.style.maxHeight = menuPanel.scrollHeight + 'px';
+    menuPanel.classList.remove('opacity-0');
+    menuPanel.classList.add('py-4');
+    menuIcon.textContent = 'close';
+    menuBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobileMenu() {
+    menuOpen = false;
+    menuPanel.style.maxHeight = '0px';
+    menuPanel.classList.add('opacity-0');
+    menuPanel.classList.remove('py-4');
+    menuIcon.textContent = 'menu';
+    menuBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  menuBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menuOpen ? closeMobileMenu() : openMobileMenu();
+  });
+
+  document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (menuOpen && !menuPanel.contains(e.target) && e.target !== menuBtn) {
+      closeMobileMenu();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menuOpen) closeMobileMenu();
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768 && menuOpen) closeMobileMenu();
+  });
+
+  // Reveal on scroll
+  function reveal() {
+    document.querySelectorAll('.reveal').forEach((el) => {
+      const elementTop = el.getBoundingClientRect().top;
+      if (elementTop < window.innerHeight - 150) el.classList.add('active');
+    });
+  }
+  window.addEventListener('scroll', reveal);
+  reveal();
+
+  // Copiar al portapapeles (corregido: antes usaba un selector CSS inválido :contains())
+  document.querySelectorAll('.copy-btn').forEach((btn) => {
+    btn.addEventListener('click', function () {
+      const text = this.closest('div').querySelector('span.font-bold')?.innerText ?? this.dataset.copy;
+      navigator.clipboard.writeText(text);
+      const icon = this.querySelector('.material-symbols-outlined');
+      const original = icon.textContent;
+      icon.textContent = 'check';
+      setTimeout(() => (icon.textContent = original), 2000);
+    });
+  });
+</script>
+
+</Layout>
