@@ -9,28 +9,31 @@ import Layout from '../layouts/Layout.astro';
   <div class="flex items-center min-w-0">
   <img src="/img/logo_novilleros.png" alt="Hotel Hacienda El Novillero" class="h-16 md:h-24 w-auto object-contain shrink-0" />
     </div>
-    <nav class="hidden md:flex gap-8 items-center">
-      <a class="font-label-md text-label-md text-tertiary-fixed-dim hover:text-primary-fixed transition-colors duration-300" href="#wifi">WiFi</a>
-      <a class="font-label-md text-label-md text-tertiary-fixed-dim hover:text-primary-fixed transition-colors duration-300" href="#checkin">Check-in</a>
-      <a class="font-label-md text-label-md text-tertiary-fixed-dim hover:text-primary-fixed transition-colors duration-300" href="#servicios">Servicios</a>
-      <a class="font-label-md text-label-md text-tertiary-fixed-dim hover:text-primary-fixed transition-colors duration-300" href="#normas">Normas</a>
-      <a class="font-label-md text-label-md text-tertiary-fixed-dim hover:text-primary-fixed transition-colors duration-300" href="#experiencias">Experiencias</a>
-      <a href="https://api.whatsapp.com/send/?phone=573135825920&text&type=phone_number" target="_blank" class="bg-primary px-6 py-2 rounded text-on-primary font-label-md hover:bg-primary-container transition-all">Reservar</a>
-    </nav>
+   <nav class="hidden md:flex gap-8 items-center">
+  <a href="https://historia-novilleros-pi.vercel.app/" target="_blank" class="font-label-md text-label-md text-tertiary-fixed-dim hover:text-primary-fixed transition-colors duration-300">Click y Conoce nuestra Historia</a>
+  <a class="font-label-md text-label-md text-tertiary-fixed-dim hover:text-primary-fixed transition-colors duration-300" href="#wifi">WiFi</a>
+  <a class="font-label-md text-label-md text-tertiary-fixed-dim hover:text-primary-fixed transition-colors duration-300" href="#checkin">Check-in</a>
+  <a class="font-label-md text-label-md text-tertiary-fixed-dim hover:text-primary-fixed transition-colors duration-300" href="#servicios">Servicios</a>
+  <a class="font-label-md text-label-md text-tertiary-fixed-dim hover:text-primary-fixed transition-colors duration-300" href="#normas">Normas</a>
+  <a class="font-label-md text-label-md text-tertiary-fixed-dim hover:text-primary-fixed transition-colors duration-300" href="#experiencias">Experiencias</a>
+  <a href="https://api.whatsapp.com/send/?phone=573135825920&text&type=phone_number" target="_blank" class="bg-primary px-6 py-2 rounded text-on-primary font-label-md hover:bg-primary-container transition-all">Reservar</a>
+</nav>
     <button id="mobile-menu-btn" class="md:hidden text-primary-fixed shrink-0 p-2 -mr-2" aria-label="Abrir menú" aria-expanded="false">
       <span id="mobile-menu-icon" class="material-symbols-outlined text-3xl">menu</span>
     </button>
   </div>
 
   <!-- Panel de navegación móvil -->
-  <nav id="mobile-menu" class="md:hidden flex flex-col bg-white border-t border-outline-variant px-4 gap-1 overflow-hidden max-h-0 opacity-0 transition-all duration-300 ease-in-out">
-    <a class="mobile-nav-link py-3 font-label-md text-label-md text-primary hover:text-secondary border-b border-iron-ink/10" href="#wifi">WiFi</a>
-    <a class="mobile-nav-link py-3 font-label-md text-label-md text-primary hover:text-secondary border-b border-iron-ink/10" href="#checkin">Check-in</a>
-    <a class="mobile-nav-link py-3 font-label-md text-label-md text-primary hover:text-secondary border-b border-iron-ink/10" href="#servicios">Servicios</a>
-    <a class="mobile-nav-link py-3 font-label-md text-label-md text-primary hover:text-secondary border-b border-iron-ink/10" href="#normas">Normas</a>
-    <a class="mobile-nav-link py-3 font-label-md text-label-md text-primary hover:text-secondary border-b border-iron-ink/10" href="#experiencias">Experiencias</a>
-    <a href="https://api.whatsapp.com/send/?phone=573135825920&text&type=phone_number" target="_blank" class="bg-primary text-center px-6 py-3 rounded text-on-primary font-label-md my-3">Reservar</a>
-  </nav>
+<nav id="mobile-menu" class="md:hidden flex flex-col bg-white border-t border-outline-variant px-4 gap-1 overflow-hidden max-h-0 opacity-0 transition-all duration-300 ease-in-out">
+  <a href="https://historia-novilleros-pi.vercel.app/" target="_blank" class="mobile-nav-link py-3 font-label-md text-label-md text-primary hover:text-secondary border-b border-iron-ink/10">Click y Conoce nuestra Historia</a>
+
+  <a class="mobile-nav-link py-3 font-label-md text-label-md text-primary hover:text-secondary border-b border-iron-ink/10" href="#wifi">WiFi</a>
+  <a class="mobile-nav-link py-3 font-label-md text-label-md text-primary hover:text-secondary border-b border-iron-ink/10" href="#checkin">Check-in</a>
+  <a class="mobile-nav-link py-3 font-label-md text-label-md text-primary hover:text-secondary border-b border-iron-ink/10" href="#servicios">Servicios</a>
+  <a class="mobile-nav-link py-3 font-label-md text-label-md text-primary hover:text-secondary border-b border-iron-ink/10" href="#normas">Normas</a>
+  <a class="mobile-nav-link py-3 font-label-md text-label-md text-primary hover:text-secondary border-b border-iron-ink/10" href="#experiencias">Experiencias</a>
+  <a href="https://api.whatsapp.com/send/?phone=573135825920&text&type=phone_number" target="_blank" class="bg-primary text-center px-6 py-3 rounded text-on-primary font-label-md my-3">Reservar</a>
+</nav>
 </header>
 
 <!-- Hero -->
@@ -265,6 +268,21 @@ import Layout from '../layouts/Layout.astro';
   <span class="material-symbols-outlined text-3xl text-tertiary-container">wine_bar</span>
   <span class="font-label-md text-xs">Tour del viñedo y cata de vino</span>
 </div>
+<div
+  data-modal-open="modal-tour-ron"
+  class="bg-primary/10 border border-primary/20 p-4 rounded-xl flex flex-col items-center text-center gap-2 cursor-pointer hover:bg-primary/20 hover:-translate-y-1 transition-all"
+>
+  <span class="material-symbols-outlined text-3xl text-primary">liquor</span>
+  <span class="font-label-md text-xs">Tour del ron</span>
+</div>
+
+<div
+  data-modal-open="modal-tour-vivero"
+  class="bg-secondary/10 border border-secondary/20 p-4 rounded-xl flex flex-col items-center text-center gap-2 cursor-pointer hover:bg-secondary/20 hover:-translate-y-1 transition-all"
+>
+  <span class="material-symbols-outlined text-3xl text-secondary">local_florist</span>
+  <span class="font-label-md text-xs">Tour de viveros</span>
+</div>
 </div>
 
         <!-- Niños -->
@@ -443,6 +461,57 @@ import Layout from '../layouts/Layout.astro';
       <source src="/video/tour_vino.mp4" type="video/mp4" />
       Tu navegador no soporta la reproducción de video.
     </video>
+  </div>
+</div>
+
+<!-- Modal: Tour del ron -->
+<div id="modal-tour-ron" class="modal-overlay hidden fixed inset-0 z-[60] items-center justify-center p-4">
+  <div class="modal-backdrop absolute inset-0 bg-iron-ink/70 backdrop-blur-sm"></div>
+
+  <div class="modal-panel relative bg-ivory-surface rounded-xl shadow-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto p-6 sm:p-8">
+    <button data-modal-close class="absolute top-4 right-4 text-outline hover:text-iron-ink transition-colors">
+      <span class="material-symbols-outlined text-2xl">close</span>
+    </button>
+
+    <div class="flex items-center gap-3 mb-2">
+      <span class="material-symbols-outlined text-primary text-3xl">liquor</span>
+      <h3 class="font-headline-md text-headline-sm text-iron-ink">Tour del ron — Hacienda Coloma</h3>
+    </div>
+
+    <div class="flex items-center gap-3 mb-5">
+      <span class="bg-primary/10 text-primary text-sm font-label-md px-3 py-1 rounded-full">$60.000 por persona</span>
+      <span class="bg-secondary/10 text-secondary text-sm font-label-md px-3 py-1 rounded-full">Duración: 1 hora</span>
+    </div>
+
+    <div class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+      <p>¡Embárcate en un viaje por los sabores más auténticos en Hacienda Coloma! Te invitamos a disfrutar de una experiencia sensorial única con nuestro Rum Tour, donde podrás degustar la distinción y elegancia de nuestros galardonados rones Coloma de 8 y 15 años.</p>
+      <p>Provenientes de la rica melaza de caña de azúcar vallecaucana, nuestros rones han sido premiados en reconocidos concursos europeos como el Meiningers International Spirits Award, destacándose por su calidad excepcional y carácter distintivo. En esta cata guiada, explorarás la historia y el proceso de elaboración de nuestros rones mientras saboreas cada matiz y aroma que los hacen únicos.</p>
+      <p>Sumérgete en la riqueza cultural y tradición de nuestro país y déjate seducir por la magia de nuestros rones Coloma.</p>
+    </div>
+
+    
+  </div>
+</div>
+
+<!-- Modal: Tour de viveros -->
+<div id="modal-tour-vivero" class="modal-overlay hidden fixed inset-0 z-[60] items-center justify-center p-4">
+  <div class="modal-backdrop absolute inset-0 bg-iron-ink/70 backdrop-blur-sm"></div>
+
+  <div class="modal-panel relative bg-ivory-surface rounded-xl shadow-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto p-6 sm:p-8">
+    <button data-modal-close class="absolute top-4 right-4 text-outline hover:text-iron-ink transition-colors">
+      <span class="material-symbols-outlined text-2xl">close</span>
+    </button>
+
+    <div class="flex items-center gap-3 mb-5">
+      <span class="material-symbols-outlined text-secondary text-3xl">local_florist</span>
+      <h3 class="font-headline-md text-headline-sm text-iron-ink">Tour de viveros — Ciudad Jardín de Colombia</h3>
+    </div>
+
+    <div class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+      <p>¿Cómo no conectar con el mundo de las flores en la "Ciudad Jardín de Colombia"? Ofrecemos un recorrido por parte de su red de viveros para admirar la gran variedad de flores, orquídeas y plantas ornamentales que ofrece Fusagasugá.</p>
+
+      
+    </div>
   </div>
 </div>
 
