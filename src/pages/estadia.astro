@@ -94,24 +94,83 @@ import Layout from '../layouts/Layout.astro';
 
   <div class="w-full max-w-sm mx-auto h-px bg-gradient-to-r from-transparent via-outline-variant to-transparent"></div>
 
-  <!-- Check-in / Check-out -->
-  <section class="reveal scroll-mt-24" id="checkin">
+<!-- Check-in / Check-out -->
+<section class="reveal scroll-mt-24" id="checkin">
   <div class="grid md:grid-cols-2 gap-12 items-center">
     <div class="relative group">
-      <div class="absolute -inset-4 border border-primary/20 rotate-1 group-hover:rotate-0 transition-transform"></div>
-      <div class="relative w-full aspect-[4/5] rounded-sm shadow-xl overflow-hidden">
-        <img
-          src="/img/habitacion.png"
-          alt="Habitación Hotel Hacienda El Novillero"
-          class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-iron-ink/60 via-transparent to-transparent"></div>
-        <div class="absolute bottom-5 left-5 text-primary-fixed">
+      <div class="absolute -inset-4 border border-primary/20 rotate-1 group-hover:rotate-0 transition-transform pointer-events-none"></div>
+
+      <div id="video-frame" class="relative w-full aspect-video rounded-sm shadow-xl overflow-hidden bg-iron-ink scroll-mt-28">
+        <video
+          id="room-video-bg"
+          class="absolute inset-0 w-full h-full object-cover blur-2xl scale-110 opacity-40"
+          muted
+          playsinline
+          preload="metadata"
+          aria-hidden="true"
+        >
+          <source src="/video/101.mp4" type="video/mp4" />
+        </video>
+
+        <video
+          id="room-video"
+          class="absolute inset-0 w-full h-full object-contain"
+          controls
+          playsinline
+          preload="metadata"
+          poster="/img/habitacion.png"
+        >
+          <source src="/video/101.mp4" type="video/mp4" />
+          Tu navegador no soporta la reproducción de video.
+        </video>
+
+        <div class="absolute inset-0 bg-gradient-to-t from-iron-ink/60 via-transparent to-transparent pointer-events-none"></div>
+        <div class="absolute bottom-5 left-5 text-primary-fixed pointer-events-none">
           <p class="font-label-sm text-label-sm uppercase tracking-widest opacity-90">Hacienda El Novillero</p>
-          <p class="font-headline-sm text-headline-sm">Nuestras habitaciones</p>
+          <p id="room-caption" class="font-headline-sm text-headline-sm">Habitación 101</p>
         </div>
       </div>
+
+      <!-- Selector de habitaciones -->
+      <div class="mt-5">
+        <p class="font-label-sm text-label-sm uppercase tracking-widest text-outline mb-3">Elija su habitación</p>
+        <div id="room-selector" class="flex flex-wrap gap-2"></div>
+      </div>
     </div>
+
+    <div class="space-y-8">
+      <h3 class="font-display-lg-mobile text-display-lg-mobile text-iron-ink">Horarios de Estadía</h3>
+      <div class="space-y-6">
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-secondary text-3xl">login</span>
+          <div>
+            <h4 class="font-headline-sm text-headline-sm text-on-surface">Check-in</h4>
+            <p class="font-body-md text-body-md text-on-surface-variant">A partir de las 3:00 p.m., hora en que se hace entrega de su habitación.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-secondary text-3xl">logout</span>
+          <div>
+            <h4 class="font-headline-sm text-headline-sm text-on-surface">Check-out</h4>
+            <p class="font-body-md text-body-md text-on-surface-variant">Hasta las 12:00 m. Entregas posteriores sin previo aviso generan un cargo de $100.000 COP por hora adicional.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 bg-secondary-container/10 border-l-4 border-secondary rounded-r-lg">
+        <p class="font-label-md text-label-md text-on-secondary-fixed-variant italic">Si su estadía supera 2 noches, hacemos limpieza parcial diaria entre 9:00 y 11:00 a.m. con su autorización — infórmenos si no la desea.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      <!-- Selector de habitaciones -->
+      <div class="mt-5">
+        <p class="font-label-sm text-label-sm uppercase tracking-widest text-outline mb-3">Elija su habitación</p>
+        <div id="room-selector" class="flex flex-wrap gap-2"></div>
+      </div>
+    </div>
+
     <div class="space-y-8">
       <h3 class="font-display-lg-mobile text-display-lg-mobile text-iron-ink">Horarios de Estadía</h3>
       <div class="space-y-6">
@@ -830,12 +889,68 @@ if (bubble && !localStorage.getItem('whatsapp-bubble-closed')) {
   }, 1800);
 }
 
+
+//videos habitaciones
 bubbleClose?.addEventListener('click', (e) => {
   e.preventDefault();
   e.stopPropagation();
   bubble.classList.add('opacity-0', 'translate-x-4', 'pointer-events-none');
   localStorage.setItem('whatsapp-bubble-closed', 'true');
 });
+// Selector de habitaciones (video)
+(function () {
+  const rooms = ['101','102','103','104','105','106','107','108','201','202','203','204','205'];
+  const selector = document.getElementById('room-selector');
+  const video = document.getElementById('room-video');
+  const caption = document.getElementById('room-caption');
+  if (!selector || !video) return;
+
+  const source = video.querySelector('source');
+  const videoBg = document.getElementById('room-video-bg');
+  const sourceBg = videoBg.querySelector('source');
+
+  function activeClasses() {
+    return ['bg-secondary', 'text-on-secondary', 'border-secondary'];
+  }
+  function inactiveClasses() {
+    return ['bg-white', 'text-on-surface-variant', 'border-outline-variant'];
+  }
+
+ function selectRoom(room, btn) {
+  video.pause();
+  videoBg.pause();
+  source.src = `/video/${room}.mp4`;
+  sourceBg.src = `/video/${room}.mp4`;
+  video.load();
+  videoBg.load();
+  video.play().catch(() => {});
+  videoBg.play().catch(() => {});
+  caption.textContent = `Habitación ${room}`;
+
+  selector.querySelectorAll('button').forEach((b) => {
+    b.classList.remove(...activeClasses());
+    b.classList.add(...inactiveClasses());
+  });
+  btn.classList.remove(...inactiveClasses());
+  btn.classList.add(...activeClasses());
+
+  document.getElementById('video-frame').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+  rooms.forEach((room, i) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.textContent = room;
+    btn.setAttribute('aria-label', `Ver video de la habitación ${room}`);
+    btn.className = [
+      'px-3', 'py-2', 'rounded-lg', 'border', 'text-xs', 'font-label-md', 'font-semibold',
+      'transition-all', 'hover:border-secondary', 'hover:text-secondary',
+      ...(i === 0 ? activeClasses() : inactiveClasses())
+    ].join(' ');
+    btn.addEventListener('click', () => selectRoom(room, btn));
+    selector.appendChild(btn);
+  });
+})();
 </script>
 
 </Layout>
