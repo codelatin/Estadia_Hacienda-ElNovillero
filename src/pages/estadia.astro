@@ -291,10 +291,46 @@ import Layout from '../layouts/Layout.astro';
     <span class="text-3xl transition-transform duration-700 group-hover:rotate-[360deg]">🚴‍♂️</span>
     <span class="font-label-md text-xs">Paseo en Bicicleta</span>
   </div>
-  <div data-modal-open="modal-caminata" class="reveal-item group bg-tertiary/10 border border-tertiary/20 p-4 rounded-xl flex flex-col items-center text-center gap-2 cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:bg-tertiary/20 hover:border-tertiary/40">
- <span class="text-3xl transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-110">🥾</span>
-    <span class="font-label-md text-xs">Caminata ecológica</span>
-  </div>
+ 
+  <div
+  data-modal-open="modal-yoga"
+  class="bg-tertiary/10 border border-tertiary/20 p-4 rounded-xl flex flex-col items-center text-center gap-2 cursor-pointer hover:bg-tertiary/20 hover:-translate-y-1 transition-all"
+>
+  <span class="text-3xl">🧘</span>
+  <span class="font-label-md text-xs">Yoga y Meditación</span>
+</div>
+
+<div
+  data-modal-open="modal-acuagym"
+  class="bg-primary/10 border border-primary/20 p-4 rounded-xl flex flex-col items-center text-center gap-2 cursor-pointer hover:bg-primary/20 hover:-translate-y-1 transition-all"
+>
+  <span class="text-3xl">🏊</span>
+  <span class="font-label-md text-xs">Acuagym</span>
+</div>
+
+<div
+  data-modal-open="modal-arteterapia"
+  class="bg-secondary/10 border border-secondary/20 p-4 rounded-xl flex flex-col items-center text-center gap-2 cursor-pointer hover:bg-secondary/20 hover:-translate-y-1 transition-all"
+>
+  <span class="text-3xl">🎨</span>
+  <span class="font-label-md text-xs">Arte Terapia</span>
+</div>
+
+<div
+  data-modal-open="modal-senderismo-bienestar"
+  class="bg-tertiary/10 border border-tertiary/20 p-4 rounded-xl flex flex-col items-center text-center gap-2 cursor-pointer hover:bg-tertiary/20 hover:-translate-y-1 transition-all"
+>
+  <span class="text-3xl">👣</span>
+  <span class="font-label-md text-xs">Senderismo</span>
+</div>
+
+<div
+  data-modal-open="modal-rituales"
+  class="bg-primary/10 border border-primary/20 p-4 rounded-xl flex flex-col items-center text-center gap-2 cursor-pointer hover:bg-primary/20 hover:-translate-y-1 transition-all"
+>
+  <span class="text-3xl">🕯️</span>
+  <span class="font-label-md text-xs">Rituales Energéticos- Pausas Sagradas</span>
+</div>
 </div>
 
 <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -800,28 +836,133 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </div>
 
-<!-- Modal: Caminata ecológica -->
-<div id="modal-caminata" class="modal-overlay hidden fixed inset-0 z-[60] items-center justify-center p-4">
+
+<!-- Modal: Yoga, Chikung y Meditación -->
+<div id="modal-yoga" class="modal-overlay hidden fixed inset-0 z-[60] items-center justify-center p-4">
+  <div class="modal-backdrop absolute inset-0 bg-iron-ink/70 backdrop-blur-sm"></div>
+  <div class="modal-panel relative bg-ivory-surface rounded-xl shadow-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto p-6 sm:p-8">
+    <button data-modal-close class="absolute top-4 right-4 text-outline hover:text-iron-ink transition-colors">
+      <span class="material-symbols-outlined text-2xl">close</span>
+    </button>
+    <div class="flex items-center gap-3 mb-2">
+      <span class="text-3xl">🧘</span>
+      <h3 class="font-headline-md text-headline-sm text-iron-ink">Yoga, Chikung y Meditación</h3>
+    </div>
+    <div class="mb-5">
+      <span class="bg-tertiary/10 text-tertiary-container text-sm font-label-md px-3 py-1 rounded-full">Duración: 1 hora</span>
+    </div>
+    <div class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+      <p>Un espacio de bienestar que le regala al cuerpo y a la mente una pausa de restauración y renovación, ideal para desconectarse de la rutina y el estrés cotidiano. Combina descanso con movimiento consciente, y es apta para familias, parejas o quien busque un momento de bienestar personal.</p>
+      <p class="font-headline-sm text-headline-sm text-iron-ink pt-2">Beneficios</p>
+      <ul class="space-y-2 list-disc pl-5">
+        <li><strong class="text-iron-ink">Para el cuerpo:</strong> genera flexibilidad, fuerza y equilibrio, mejora la digestión y fortalece el sistema inmune.</li>
+        <li><strong class="text-iron-ink">Para la mente:</strong> mejora la ansiedad, la concentración y el sueño, reduce el estrés y genera claridad mental.</li>
+        <li><strong class="text-iron-ink">Para la emoción y energía:</strong> favorece la conexión consigo mismo, la liberación emocional y la gratitud.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Acuagym -->
+<div id="modal-acuagym" class="modal-overlay hidden fixed inset-0 z-[60] items-center justify-center p-4">
+  <div class="modal-backdrop absolute inset-0 bg-iron-ink/70 backdrop-blur-sm"></div>
+  <div class="modal-panel relative bg-ivory-surface rounded-xl shadow-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto p-6 sm:p-8">
+    <button data-modal-close class="absolute top-4 right-4 text-outline hover:text-iron-ink transition-colors">
+      <span class="material-symbols-outlined text-2xl">close</span>
+    </button>
+    <div class="flex items-center gap-3 mb-2">
+      <span class="text-3xl">🏊</span>
+      <h3 class="font-headline-md text-headline-sm text-iron-ink">Acuagym</h3>
+    </div>
+    <div class="mb-5">
+      <span class="bg-primary/10 text-primary text-sm font-label-md px-3 py-1 rounded-full">Duración: 1 hora</span>
+    </div>
+    <div class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+      <p>Ejercicio en el agua, apto para todas las edades y condiciones físicas — una manera divertida y de bajo impacto de mantenerse activo mientras se relaja.</p>
+      <p class="font-headline-sm text-headline-sm text-iron-ink pt-2">Beneficios</p>
+      <ul class="space-y-2 list-disc pl-5">
+        <li><strong class="text-iron-ink">Para el cuerpo:</strong> cero impacto en las articulaciones, tonifica todo el cuerpo, mejora la circulación, ayuda a bajar la presión arterial y fortalece los huesos.</li>
+        <li><strong class="text-iron-ink">Para la mente y la emoción:</strong> es un anti-estrés inmediato, sube la autoestima sintiéndose más ágil sin importar la edad o el cuerpo — divertido y energizante.</li>
+        <li>El agua conecta con la emoción: las personas salen más livianas.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Arte Terapia -->
+<div id="modal-arteterapia" class="modal-overlay hidden fixed inset-0 z-[60] items-center justify-center p-4">
+  <div class="modal-backdrop absolute inset-0 bg-iron-ink/70 backdrop-blur-sm"></div>
+  <div class="modal-panel relative bg-ivory-surface rounded-xl shadow-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto p-6 sm:p-8">
+    <button data-modal-close class="absolute top-4 right-4 text-outline hover:text-iron-ink transition-colors">
+      <span class="material-symbols-outlined text-2xl">close</span>
+    </button>
+    <div class="flex items-center gap-3 mb-2">
+      <span class="text-3xl">🎨</span>
+      <h3 class="font-headline-md text-headline-sm text-iron-ink">Arte Terapia</h3>
+    </div>
+    <div class="mb-5">
+      <span class="bg-secondary/10 text-secondary text-sm font-label-md px-3 py-1 rounded-full">Duración: 1 hora</span>
+    </div>
+    <div class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+      <p>Una sesión guiada donde la creatividad se convierte en herramienta de bienestar, sin necesidad de experiencia previa en arte — solo el deseo de conectar consigo mismo a través de la expresión.</p>
+      <p class="font-headline-sm text-headline-sm text-iron-ink pt-2">Beneficios</p>
+      <ul class="space-y-2 list-disc pl-5">
+        <li><strong class="text-iron-ink">Para la mente:</strong> baja la ansiedad y el estrés, ordena los pensamientos y mejora el enfoque.</li>
+        <li><strong class="text-iron-ink">Para la emoción:</strong> libera emociones guardadas y lleva al autoconocimiento.</li>
+        <li><strong class="text-iron-ink">Para el cuerpo:</strong> mejora el equilibrio, tonifica y fortalece los huesos.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Senderismo (bienestar) -->
+<div id="modal-senderismo-bienestar" class="modal-overlay hidden fixed inset-0 z-[60] items-center justify-center p-4">
   <div class="modal-backdrop absolute inset-0 bg-iron-ink/70 backdrop-blur-sm"></div>
   <div class="modal-panel relative bg-ivory-surface rounded-xl shadow-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto p-6 sm:p-8">
     <button data-modal-close class="absolute top-4 right-4 text-outline hover:text-iron-ink transition-colors">
       <span class="material-symbols-outlined text-2xl">close</span>
     </button>
     <div class="flex items-center gap-3 mb-5">
-      <span class="text-3xl">🥾</span>
-      <h3 class="font-headline-md text-headline-sm text-iron-ink">Caminata Ecológica</h3>
+      <span class="text-3xl">👣</span>
+      <h3 class="font-headline-md text-headline-sm text-iron-ink">Senderismo</h3>
     </div>
     <div class="space-y-4 font-body-md text-body-md text-on-surface-variant">
-      <p>Una caminata guiada por senderos naturales alrededor de la hacienda, ideal para quienes disfrutan del contacto con la naturaleza y el aire libre.</p>
-      <p class="font-headline-sm text-headline-sm text-iron-ink pt-2">Recomendaciones</p>
+      <p>Caminatas conscientes por los senderos de la hacienda, guiadas para conectar con el entorno natural a un ritmo propio — ideales como pausa activa dentro del programa de bienestar.</p>
+      <p class="font-headline-sm text-headline-sm text-iron-ink pt-2">Beneficios</p>
       <ul class="space-y-2 list-disc pl-5">
-        <li>Reserve su cupo con anticipación en recepción.</li>
-        <li>Use calzado cómodo y cerrado, apto para caminar en senderos naturales.</li>
-        <li>Se recomienda llevar agua, protector solar y repelente.</li>
-        <li>Consulte con el guía la duración y el nivel de dificultad del recorrido antes de iniciar.</li>
+        <li><strong class="text-iron-ink">Para el cuerpo:</strong> mejora el equilibrio, tonifica, fortalece los huesos y el sistema inmune.</li>
+        <li><strong class="text-iron-ink">Para la mente:</strong> es un anti-estrés inmediato, reduce la ansiedad, mejora el sueño y genera claridad mental.</li>
+        <li><strong class="text-iron-ink">Para la emoción:</strong> libera las emociones guardadas, permite la elaboración de duelos y traumas.</li>
       </ul>
     </div>
   </div>
+</div>
+
+<!-- Modal: Conexión Energética y Espiritual (Rituales) -->
+<div id="modal-rituales" class="modal-overlay hidden fixed inset-0 z-[60] items-center justify-center p-4">
+  <div class="modal-backdrop absolute inset-0 bg-iron-ink/70 backdrop-blur-sm"></div>
+  <div class="modal-panel relative bg-ivory-surface rounded-xl shadow-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto p-6 sm:p-8">
+    <button data-modal-close class="absolute top-4 right-4 text-outline hover:text-iron-ink transition-colors">
+      <span class="material-symbols-outlined text-2xl">close</span>
+    </button>
+    <div class="flex items-center gap-3 mb-2">
+      <span class="text-3xl">🕯️</span>
+      <h3 class="font-headline-md text-headline-sm text-iron-ink">Conexión Energética y Espiritual</h3>
+    </div>
+    <div class="mb-5">
+      <span class="bg-primary/10 text-primary text-sm font-label-md px-3 py-1 rounded-full">Duración: 1 hora</span>
+    </div>
+    <div class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+      <p class="italic">"No es caminar es volver a ti paso a paso."</p>
+      <p>Sesiones de rituales energéticos: pausas sagradas para darse un espacio de soltar, agradecer y descargar.</p>
+      <p class="font-headline-sm text-headline-sm text-iron-ink pt-2">Beneficios</p>
+      <ul class="space-y-2 list-disc pl-5">
+        <li><strong class="text-iron-ink">Para la mente:</strong> baja el ruido mental, genera claridad, reduce la ansiedad y mejora el enfoque.</li>
+        <li><strong class="text-iron-ink">Para la emoción:</strong> ayuda a soltar, llorar, agradecer, perdonar, y a sanar duelos.</li>
+        <li><strong class="text-iron-ink">Para el cuerpo y la energía:</strong> genera descarga, enraizamiento, descanso profundo y libera bloqueos y miedos.</li>
+      </ul>
+    </div>
+     </div>
 </div>
 
 <!-- Botón flotante de WhatsApp -->
